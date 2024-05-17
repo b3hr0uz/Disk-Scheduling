@@ -14,7 +14,7 @@ int *trackSequence = NULL;
 int sequenceSize = 0;
 
 /*********************************************************/
-void enterParameters() {
+void enterParameters(void) {
     // Prompt for the sequence size
     printf("Enter size of sequence: ");
     while (scanf("%d", &sequenceSize) != 1 || sequenceSize <= 0) {
@@ -28,7 +28,7 @@ void enterParameters() {
 } // enterParameters
 
 /*********************************************************/
-void calculateDistanceFIFO() {
+void calculateDistanceFIFO(void) {
     // Declare local variables
     int startTrack;
     int totalDistance = 0;
@@ -63,7 +63,7 @@ void calculateDistanceFIFO() {
 } // calculateDistanceFIFO
 
 /*********************************************************/
-void calculateDistanceSSTF() {
+void calculateDistanceSSTF(void) {
     // Declare local variables
     int startTrack, currentTrack, totalDistance = 0;
     int *visited = (int *)calloc(sequenceSize, sizeof(int));
@@ -119,7 +119,7 @@ void calculateDistanceSSTF() {
 } // calculateDistanceSSTF
 
 /*********************************************************/
-void calculateDistanceScan() {
+void calculateDistanceScan(void) {
     // Declare local variables
     int startTrack, currentTrack, totalDistance = 0;
     int direction;
@@ -198,7 +198,7 @@ void calculateDistanceScan() {
 } // calculateDistanceScan
 
 /*********************************************************/
-void calculateDistanceCScan() {
+void calculateDistanceCScan(void) {
     // Declare local variables
     int startTrack, currentTrack, totalDistance = 0;
     int *visited = (int *)calloc(sequenceSize, sizeof(int));
@@ -270,7 +270,7 @@ void calculateDistanceCScan() {
 } // calculateDistanceCScan
 
 /***************************************************************/
-void quitProgram() {
+void quitProgram(void) {
     // If sequence is not NULL, free sequence
     if (trackSequence != NULL) {
         free(trackSequence);
@@ -281,7 +281,7 @@ void quitProgram() {
 } // quitProgram
 
 /***************************************************************/
-int main() {
+int main(void) {
     // Declare local vars
     int choice;
     // While user has not chosen to quit
